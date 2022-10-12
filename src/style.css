@@ -9,6 +9,7 @@
 :root {
     --blue-dark: hsl(220, 100%, 35%);
     --yellow-base: hsl(55, 100%, 50%);
+    --dark: hsl(0, 0%, 20%);
 }
 
 html {
