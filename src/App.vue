@@ -1,17 +1,20 @@
 <script>
 import RangeInput from './components/RangeInput.vue';
 import Image from './components/Image.vue';
+import ColorInput from './components/ColorInput.vue'
 
 export default {
     components: {
         RangeInput,
-        Image
+        Image,
+        ColorInput
     },
     data()
     {
         return {
             blur: '0',
-            space: '0'
+            space: '0',
+            color: '0x000000'
         }
     },
     methods: {
@@ -22,6 +25,10 @@ export default {
         spaceHandle(value)
         {
             this.space = value;
+        },
+        colorHandle(value)
+        {
+            this.color = value;
         }
     }
 }
@@ -31,7 +38,8 @@ export default {
     <h1>Update CSS Variables with <span class="yellow-txt">JS</span></h1>
     <RangeInput min="0" max="10" text="blur" @change="blurHandle"/>
     <RangeInput min="0" max="10" text="space" @change="spaceHandle"/>
-    <Image :blur="blur" :space="space"/>
+    <ColorInput text="color" @change="colorHandle"/>
+    <Image :blur="blur" :space="space" :color="color"/>
 </template>
 
 <style scoped>
