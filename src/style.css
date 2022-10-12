@@ -5,9 +5,19 @@
     box-sizing: border-box;
 }
 
+:root {
+    --blue-dark: hsl(220, 100%, 40%);
+    --yellow-base: hsl(50, 100%, 50%);
+}
+
+html {
+    font-size: 16px;
+}
+
 body {
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    background: linear-gradient(to bottom, var(--blue-dark), var(--yellow-base));
 }
