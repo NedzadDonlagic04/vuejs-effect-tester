@@ -14,6 +14,7 @@ export default {
             required: true
         }
     },
+    emits: ['change'],
     methods: {
         updatePos()
         {
@@ -24,6 +25,8 @@ export default {
             this.$refs.output.style.left = `${percent}%`;
             this.$refs.output.style.transform = `translate(calc(-${percent}%), 80%)`;
             this.$refs.output.innerText = value;
+
+            this.$emit('change', String(value));
         }   
     }
 }
@@ -44,6 +47,7 @@ export default {
         height: 100%;
         width: 100%;
         color: white;
+        user-select: none;
 
         display: flex;
         flex-direction: column;
@@ -55,7 +59,6 @@ export default {
 
     .var-container label {
         font-size: 1.5rem;
-        user-select: none;
     }
 
     .var-container label::first-letter {
@@ -79,7 +82,6 @@ export default {
     }
 
     .range-output {
-        user-select: none;
         position: absolute;
         bottom: 0;
         left: 0;
