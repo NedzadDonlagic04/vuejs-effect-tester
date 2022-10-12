@@ -3,11 +3,12 @@
 *::after {
     margin: 0;
     box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
 }
 
 :root {
-    --blue-dark: hsl(220, 100%, 40%);
-    --yellow-base: hsl(50, 100%, 50%);
+    --blue-dark: hsl(220, 100%, 35%);
+    --yellow-base: hsl(55, 100%, 50%);
 }
 
 html {
@@ -19,5 +20,16 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(to bottom, var(--blue-dark), var(--yellow-base));
+    background: linear-gradient(to bottom, var(--blue-dark) 40%, var(--yellow-base));
+}
+
+#app {
+    width: max(60rem, 90vw);
+    margin: 0 2rem;
+    min-height: 80vh;
+
+    display: grid;
+    grid-template-rows: 1fr 1fr 3fr;
+    grid-template-columns: repeat(3, 1fr);
+    place-items: center;
 }
