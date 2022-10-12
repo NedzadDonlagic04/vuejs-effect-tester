@@ -6,15 +6,32 @@ export default {
     components: {
         RangeInput,
         Image
+    },
+    data()
+    {
+        return {
+            blur: '0',
+            space: '0'
+        }
+    },
+    methods: {
+        blurHandle(value) 
+        {
+            this.blur = value;
+        },
+        spaceHandle(value)
+        {
+            this.space = value;
+        }
     }
 }
 </script>
 
 <template>
     <h1>Update CSS Variables with <span class="yellow-txt">JS</span></h1>
-    <RangeInput min="0" max="20" text="blur"/>
-    <RangeInput min="0" max="10" text="space"/>
-    <Image />
+    <RangeInput min="0" max="10" text="blur" @change="blurHandle"/>
+    <RangeInput min="0" max="10" text="space" @change="spaceHandle"/>
+    <Image :blur="blur" :space="space"/>
 </template>
 
 <style scoped>
