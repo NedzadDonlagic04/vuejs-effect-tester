@@ -12,7 +12,8 @@ export default {
 
 <template>
     <h1>Update CSS Variables with <span class="yellow-txt">JS</span></h1>
-    <RangeInput />
+    <RangeInput min="0" max="20" text="blur"/>
+    <RangeInput min="0" max="10" text="space"/>
     <Image />
 </template>
 
